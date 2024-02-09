@@ -38,6 +38,11 @@ def oversamplig_dataframe(df, target, method='SMOTE'):
     df_res = pd.concat([X_res, y_res], axis=1)
     return df_res
 
+def oversamplig_data(df, target, method='SMOTE'):
+    X = df
+    y = target
+    X_res, y_res = over_sampling(X, y, method)
+    return X_res, y_res
 
 
 def print_feature_importances_shap_values(shap_values, features):
@@ -61,3 +66,4 @@ def print_feature_importances_shap_values(shap_values, features):
     # Prints the feature importances
     for k, v in feature_importances.items():
         print(f"{k} -> {v:.4f} (softmax = {feature_importances_norm[k]:.4f})")
+        

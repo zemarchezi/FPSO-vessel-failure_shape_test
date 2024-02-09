@@ -16,6 +16,7 @@ def display_side_by_side(dfs:list, captions:list):
     for caption, df in combined.items():
         output += df.style.set_table_attributes("style='display:inline'").set_caption(caption)._repr_html_()
         output += "\xa0\xa0\xa0"
+    print(output)
     display(HTML(output))
 
 
